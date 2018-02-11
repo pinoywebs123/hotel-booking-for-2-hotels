@@ -1,4 +1,2 @@
-Monina Hotel Booking System made from laravel php framework version 5.4.
-Enable customer to book and check for rooms and schedules and book.
-Enable to view activity list/edit profile/
-It also provides restful services for mobile application.
+Booking System for 2 differents hotels where users can register and choose which to hotel and room catery then room number to book no online payment integeration just get the staff name to send downpayment for reservation to any remittance available in the philippines.
+Two different admin from each hotel to check cusotmers reservation and reports. then we also have super admins that monitors 2 admins and create another admin for each hotels.
