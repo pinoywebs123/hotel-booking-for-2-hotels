@@ -1,0 +1,37 @@
+section {
+    position: relative;
+}
+section img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -175px;
+    margin-left: -40%;
+    margin-bottom: 0;
+}
+
+#left {
+    background-image: url('left.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+}
+
+#right {
+    background-image: url('right.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+}
