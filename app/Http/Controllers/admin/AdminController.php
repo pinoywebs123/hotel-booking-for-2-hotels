@@ -33,10 +33,35 @@ class AdminController extends Controller
     }
 
     public function admin_rooms(){
-        $cats = Category::all();
+        $cats = Category::where('hotel_id',1)->get();
+        $count = 0;
+
+        $rooms = Rooms::all();
+       foreach($rooms as $room){
+        if($room->category->hotel_id == 1){
+            $count = $count + 1;
+        }
+       }
+      
+      
+       
       
 
-    	return view('admin.room.rooms', compact('cats'));
+    	return view('admin.room.rooms', compact('cats','count'));
+    }
+
+    public function admin_rooms_velez(){
+        $cats = Category::where('hotel_id',2)->get();
+        $count = 0;
+
+        $rooms = Rooms::all();
+       foreach($rooms as $room){
+        if($room->category->hotel_id == 1){
+            $count = $count + 1;
+        }
+       }
+       
+        return view('admin.room.velez', compact('cats', 'count'));
     }
 
     public function admin_reports(){

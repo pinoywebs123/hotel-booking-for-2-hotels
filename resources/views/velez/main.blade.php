@@ -179,9 +179,9 @@
                         </td>
                         <td>{{$room->created_at->toDayDateTimeString()}}</td>
                         <td>
-                          <a href="#" class="btn btn-success btn-xs">Approve</a>
-                          <a href="#" class="btn btn-danger btn-xs {{$room->status_id != 1 ? 'disabled' : ''}}">Cancel</a>
-                          <a href="#" class="btn btn-info btn-xs">View</a>
+                          <a href="{{route('velez_approve', ['id'=> $room->id])}}" class="btn btn-success btn-xs">Approve</a>
+                          <a href="{{route('velez_cancel', ['id'=> $room->id])}}" class="btn btn-danger btn-xs {{$room->status_id != 1 ? 'disabled' : ''}}">Cancel</a>
+                          <a href="{{route('velez_info', ['id'=> $room->id])}}" class="btn btn-info btn-xs">View</a>
                           
                         </td>
                       </tr>

@@ -133,18 +133,16 @@
 
         <div id="page-wrapper">
             <ul class="nav nav-tabs">
-              <li role="presentation" class="active"><a href="{{route('admin_rooms')}}">Margareta</a></li>
-              <li role="presentation"><a href="{{route('admin_rooms_velez')}}">Velez</a></li>
+              <li role="presentation" ><a href="{{route('admin_rooms')}}">Margareta</a></li>
+              <li role="presentation" class="active"><a href="{{route('admin_rooms_velez')}}">Velez</a></li>
               
             </ul>
 
             <table class="table">
               <thead>
                 <tr>
-                 
                   <th>Room Type</th>
                   <th>Total Rooms</th>
-                  
                   
                 </tr>
               </thead>
@@ -160,6 +158,7 @@
                   </tr>
                 @endforeach
               </tbody>
+             
             </table>
         </div>
            

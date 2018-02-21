@@ -169,10 +169,17 @@ Route::group(['prefix'=> 'superadmin'], function(){
 			'uses'=> 'admin\AdminController@admin_set_check_out'
 		]);
 
-	Route::get('/rooms', [
+	Route::get('/rooms-margareta', [
 		'as'=> 'admin_rooms',
 		'uses'=> 'admin\AdminController@admin_rooms'
 	]);
+
+	Route::get('/rooms-velez', [
+		'as'=> 'admin_rooms_velez',
+		'uses'=> 'admin\AdminController@admin_rooms_velez'
+	]);
+
+	
 		Route::get('/room-create', [
 			'as'=> 'admin_rooms_create',
 			'uses'=> 'admin\AdminController@admin_rooms_create'
@@ -490,6 +497,22 @@ Route::group(['prefix'=> 'velez'], function(){
 		'as'=> 'velez_payment_personnel_delete',
 		'uses'=> 'VelezController@velez_payment_personnel_delete'
 	]);
+
+	Route::get('/cancel/{id}', [
+			'as'=> 'velez_cancel',
+			'uses'=> 'VelezController@velez_cancel'
+		]);
+
+		Route::get('/approve/{id}', [
+			'as'=> 'velez_approve',
+			'uses'=> 'VelezController@velez_approve'
+		]);
+
+		Route::get('/info/{id}', [
+			'as'=> 'velez_info',
+			'uses'=> 'VelezController@velez_info'
+		]);
+
 
 });
 

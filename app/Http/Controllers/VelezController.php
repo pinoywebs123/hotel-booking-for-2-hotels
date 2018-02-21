@@ -8,6 +8,7 @@ use App\UserTransaction;
 use App\Category;
 use App\PayPerson;
 use App\Rooms;
+use App\Record;
 class VelezController extends Controller
 {
     public function __construct(){
@@ -125,6 +126,41 @@ class VelezController extends Controller
        $find = PayPerson::where('id', $id)->delete();
        if($find){
         return redirect()->back()->with('ok', 'Payment Personnel has been deleted successfully!');
+       }
+    }
+
+    public function velez_info($id){
+         $find = UserTransaction::findOrFail($id);
+        
+        $differenceFormat = '%a';
+        $datetime1 = date_create($find->check_in);
+        $datetime2 = date_create($find->check_out);
+        $interval = date_diff($datetime1, $datetime2);
+        $days = intval($interval->format($differenceFormat));
+
+        return view('velez.info', compact('find', 'days'));
+    }
+
+    public function velez_approve($id){
+        $find = UserTransaction::where('id',$id)->first();
+
+        $rec = new Record;
+       $rec->room_id = $find->room_id;
+       $rec->status_id = 5;
+       $rec->user_id = Auth::id();
+       $rec->save();
+
+       
+        UserTransaction::where('id', $id)->update(['status_id'=>5]);
+
+        return redirect()->back()->with('paid', 'Paid Room successfully!');
+    }
+
+    public function velez_cancel($id){
+        $cancel = UserTransaction::where('id',$id)->update(['status_id'=>4]);
+
+       if($cancel){
+        return redirect()->back()->with('cancel', 'Cancel Room successfully!');
        }
     }
 }

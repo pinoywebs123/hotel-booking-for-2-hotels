@@ -27,21 +27,26 @@
         font-size: 48px;
     }
     .navbar {
-     background: #10ac84 !important;
+     background: #192a56 !important;
    }
    #sides ul {
-    background: #009432 !important;
+    background: #273c75 !important;
    }
 
    #sides ul li a{
     color: #fff !important;
    }
-
    body {
     background: #2c3e50;
    }
    span{
     font-size: 40px;
+   }
+
+  
+
+   body {
+    background-color: #fff !important;
    }
 
    li.dropdown a {
@@ -50,11 +55,6 @@
 
    li.open a {
     color: #273c75;
-   }
-  
-
-   body {
-    background-color: #fff !important;
    }
 </style>
 
@@ -84,10 +84,6 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{Auth::user()->email}} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                        
-                        
-                        <li>
-                            <a href="{{route('admin_profile')}}"><i class="fa fa-fw fa-gear"></i> Profile</a>
-                        </li>
                          <li>
                             <a href="{{route('admin_settings')}}"><i class="fa fa-fw fa-gear"></i> Settings</a>
                         </li>
@@ -100,67 +96,85 @@
             </ul>
            
             <div class="collapse navbar-collapse navbar-ex1-collapse" id="sides">
-                <ul class="nav navbar-nav side-nav">
-                	<li>
+                 <ul class="nav navbar-nav side-nav">
+                  
+                    <li>
                        <a href="#">
                           <p class="text-center" style="color: #fff">{{Auth::user()->fname}} {{Auth::user()->lname}}</p>
                           
                        
                        </a>
                     </li>
-                    <li >
-                      <a href="{{route('admin_main')}}" ><i class="glyphicon glyphicon-home"></i> Home</a>
-                    </li>
-                   
                     <li class="active">
-                      <a href="{{route('admin_rooms')}}" ><i class="glyphicon glyphicon-home"></i> Room Maps</a>
-                    </li>
-                    <li >
-                      <a href="{{route('admin_reports')}}" ><i class="glyphicon glyphicon-th-list"></i> Report</a>
-                    </li>
-                     
-                    <li >
-                      <a href="{{route('admin_users')}}" ><i class="glyphicon glyphicon-th-list"></i> Users</a>
+                      <a href="{{route('velez_main')}}" ><i class="glyphicon glyphicon-home"></i> Home</a>
                     </li>
                     
-                     <li >
-                      <a href="{{route('admin_payment_personnel')}}" ><i class="glyphicon glyphicon-usd"></i> Payment Personnel</a>
+                    <li >
+                      <a href="{{route('velez_rooms')}}" ><i class="glyphicon glyphicon-home"></i> Rooms</a>
                     </li>
+                    <li >
+                      <a href="{{route('velez_reports')}}" ><i class="glyphicon glyphicon-th-list"></i> Report</a>
+                    </li>
+                   
+                    
+
+                    <li >
+                      <a href="{{route('velez_payment_personnel')}}" ><i class="glyphicon glyphicon-usd"></i> Payment Personnel</a>
+                    </li>
+                    
                 </ul>
             </div>
            
         </nav>
 
         <div id="page-wrapper">
-            <ul class="nav nav-tabs">
-              <li role="presentation" class="active"><a href="{{route('admin_rooms')}}">Margareta</a></li>
-              <li role="presentation"><a href="{{route('admin_rooms_velez')}}">Velez</a></li>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="text-center">View Reservation Details</h3>
+            </div>
+            <div class="panel-body">
               
-            </ul>
+             @if(Session::has('yes'))
+                    <div class="alert alert-info alert-dismissable">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      <strong>Information!</strong>{{Session::get('yes')}}
+                    </div>
+                  @endif
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <ul class="list-group">
+                      <li class="list-group-item">Name: {{$find->user->fname}} {{$find->user->lname}}</li>
+                      <li class="list-group-item">Room Type:{{$find->room->category->category_name}} </li>
+                      <li class="list-group-item">Room No#: {{$find->room_id}}</li>
+                      <li class="list-group-item">Price: {{$find->room->category->price}}</li>
+                      <li class="list-group-item">Number of Days: {{$days}}</li>
+                      <li class="list-group-item">Additional Occupants : {{$find->occupants - $find->room->category->person}} </li>
+                    </ul>
 
-            <table class="table">
-              <thead>
-                <tr>
+                    
+
+                    
+
                  
-                  <th>Room Type</th>
-                  <th>Total Rooms</th>
-                  
-                  
-                </tr>
-              </thead>
-              <tbody>
-                @foreach($cats as $cat)
-                  <tr>
-                    
-                    <td>{{$cat->category_name}}</td>
-                   <td>{{$count}}</td>
-                   
-                   
-                    
-                  </tr>
-                @endforeach
-              </tbody>
-            </table>
+               </div>
+
+                 <div class="col-md-6">
+                    <ul class="list-group">
+                      <li class="list-group-item">Bill: {{$find->bill}}</li>
+                      <li class="list-group-item">Check-in-time: {{$find->check_in_time}}</li>
+                      <li class="list-group-item">Check-in-date: {{$find->check_in}}</li>
+                      <li class="list-group-item">Check-out-date: {{$find->check_out}}</li>
+                    </ul>
+                 </div>
+
+              </div>
+
+              
+               
+            </div>
+          </div>
+
         </div>
            
 
