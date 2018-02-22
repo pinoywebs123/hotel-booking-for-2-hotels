@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>Monina RM Midtown</title>
+  <title>Bais City Pension Houses</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{{URL::to('css/bootstrap.min.css')}}">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
   <style>
    .navbar{
     background: #2ecc71 !important;
@@ -164,7 +163,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#myPage">Bais Hotel Booking</a>
+      <a class="navbar-brand" href="#myPage">Bais City Pension Houses</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -225,4 +224,6 @@
 
 
 </body>
+<script src="{{URL::to('js/jquery.js')}}"></script>
+<script src="{{URL::to('js/bootstrap.min.js')}}"></script>
 </html>

@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   
-  <title>Bais City Hotel</title>
+  <title>Bais City Pension Houses</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <link rel="stylesheet" type="text/css" href="{{URL::to('css/bootstrap.min.css')}}">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
   <style>
   body {
       font: 400 15px Lato, sans-serif;
@@ -267,7 +266,7 @@
 </nav>
 
 <div class="jumbotron text-center">
-  <h1>Bais City Hotels</h1> 
+  <h1>Bais City Pension Houses</h1> 
   <p>We served you the best</p> 
   
 </div>
@@ -348,7 +347,8 @@
 
 
 <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4678.40936967048!2d123.11846372489195!3d9.590297789577349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sph!4v1518267954867" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-
+<script src="{{URL::to('js/jquery.js')}}"></script>
+    <script src="{{URL::to('js/bootstrap.min.js')}}"></script>
 <script>
 $(document).ready(function(){
 

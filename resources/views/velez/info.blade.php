@@ -118,9 +118,9 @@
                    
                     
 
-                    <li >
+                   <!--  <li >
                       <a href="{{route('velez_payment_personnel')}}" ><i class="glyphicon glyphicon-usd"></i> Payment Personnel</a>
-                    </li>
+                    </li> -->
                     
                 </ul>
             </div>
@@ -165,6 +165,10 @@
                       <li class="list-group-item">Check-in-time: {{$find->check_in_time}}</li>
                       <li class="list-group-item">Check-in-date: {{$find->check_in}}</li>
                       <li class="list-group-item">Check-out-date: {{$find->check_out}}</li>
+                      <li class="list-group-item">
+                        <a href="{{route('velez_set_check_in', ['id'=> $find->id])}}" class="btn btn-primary btn-xs">Check-in</a>
+                        <a href="{{route('velez_set_check_out', ['id'=> $find->id])}}" class="btn btn-danger btn-xs">Check-out</a>
+                      </li>
                     </ul>
                  </div>
 

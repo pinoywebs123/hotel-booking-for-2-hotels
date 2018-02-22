@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Twin Hotel</title>
+        <title>Bais City Pension Houses</title>
         <link rel="stylesheet" type="text/css" href="{{URL::to('css/bootstrap.min.css')}}">
         <link rel="stylesheet" type="text/css" href="{{URL::to('user/style.css')}}">
         <link rel="stylesheet" type="text/css" href="{{URL::to('user/style2.css')}}">

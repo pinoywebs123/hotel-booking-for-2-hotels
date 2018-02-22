@@ -122,10 +122,10 @@
                     <li >
                       <a href="{{route('admin_users')}}" ><i class="glyphicon glyphicon-th-list"></i> Users</a>
                     </li>
-                    
+                    <!-- 
                      <li >
                       <a href="{{route('admin_payment_personnel')}}" ><i class="glyphicon glyphicon-usd"></i> Payment Personnel</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
            

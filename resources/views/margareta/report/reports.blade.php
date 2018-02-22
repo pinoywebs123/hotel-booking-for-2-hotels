@@ -118,10 +118,10 @@
                     </li>
                    
                     
-
+<!-- 
                     <li >
                       <a href="{{route('margareta_payment_personnel')}}" ><i class="glyphicon glyphicon-usd"></i> Payment Personnel</a>
-                    </li>
+                    </li> -->
                     
                 </ul>
             </div>

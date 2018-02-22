@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>Monina RM Midtown</title>
+  <title>Bais City Pension Houses</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{{URL::to('css/bootstrap.min.css')}}">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
   <style>
    .navbar{
     background: #2ecc71 !important;
@@ -158,7 +157,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#myPage">Monina RM Midtown</a>
+      <a class="navbar-brand" href="#myPage">Bais City Pension Houses</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -175,19 +174,9 @@
   <div class="col-md-12">
                 <div class="text-center alert alert-warning">
                   <h3>Note!!! </h3>
-                  <p>For Payment Send the money to any remittance.</p>
-                  <p>Details: </p>
-                  @foreach($personnel as $morls)
-
-                
-                    @if($morls->hotel_id == $find->room->category->hotel_id)
-                      <p>Name: {{$morls->fname}} {{$morls->mname}} {{$morls->lname}}</p>
-                    <p>Contact: {{$morls->contact}}</p>
-                    <p>Position: {{$morls->position}}</p>
-                    @endif
-                    
-                    
-                   @endforeach
+                  <p>You are only allowed to pay your reservation within 2 days else it will be canceled by the hotel staff.</p>
+                  
+                 
                    
                    
  
@@ -247,4 +236,6 @@
 
 
 </body>
+<script src="{{URL::to('js/jquery.js')}}"></script>
+<script src="{{URL::to('js/bootstrap.min.js')}}"></script>
 </html>

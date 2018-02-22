@@ -48,6 +48,7 @@ class UserController extends Controller
 
     	 $find = Rooms::where('room_number',$request['room_number'])->first();
 
+
         $users = DB::select('SELECT * FROM `user_transactions` WHERE ((UNIX_TIMESTAMP("' . $request['check_in_date'] . '") BETWEEN UNIX_TIMESTAMP(check_in) AND UNIX_TIMESTAMP(check_out)) OR (UNIX_TIMESTAMP("' . $request['check_out_date'] . '") BETWEEN UNIX_TIMESTAMP(check_in) AND UNIX_TIMESTAMP(check_out))) AND (status_id = 1 OR status_id = 2 OR status_id = 5) AND room_id = ' . $find->room_number);
 
         if (count($users))
@@ -67,15 +68,27 @@ class UserController extends Controller
         $book->bill = $price * $days;
         $book->save();
 
-       
+         if($find->category->hotel_id == 1){
+                 $data = array('title'=> 'Margareta Pension House',
+                      'content'=> 'Dear our value customers. You have chosen to check-in from '.$request['check_in_date'].' and check-out date of '.$request['check_out_date'].' at ' .$request['check_in_time']. ' you have a total bill of: '.$book->bill. '. Kindly send the money to any remittance available in your place to Aileen Makabebe receptionist from Margareta Pension House contact# 123456',
+                      'email'=> Auth::user()->email
+                      );
+               Mail::send('auth.email', $data, function($message) use ($data){
+                $message->to($data['email'])->subject('Bill of Payment for Margareta Pension House');
+               });
+        }else{
+            $data = array('title'=> 'Velez Pension House',
+                      'content'=> 'Dear our value customers. You have chosen to check-in from '.$request['check_in_date'].' and check-out date of '.$request['check_out_date'].' at ' .$request['check_in_time'].' you have a total bill of: '.$book->bill.'. Kindly send the money to any remittance available in your place to Kenneth Abril receptionist from Velez Pension House contact# 7891011',
+                      'email'=> Auth::user()->email
+                      );
+               Mail::send('auth.email', $data, function($message) use ($data){
+                $message->to($data['email'])->subject('Bill of Payment for Velez Pension House');
+               });
+        }
 
-        // $data = array('title'=> 'The Monina RM Midtown Inn & Restaurant',
-        //           'content'=> 'Dear our value customers. You have chosen to check-in from'.$request['check_in_date'].' and check-out date of'.$request['check_out_date'].' at ' .$request['check_in_time']. ' with total occupants of '.$request['occupants'].' you have a total bill of: : '.$book->bill,
-        //           'email'=> Auth::user()->email
-        //           );
-        //    Mail::send('auth.email', $data, function($message) use ($data){
-        //     $message->to($data['email'])->subject('Bill of Payment for Monina RM Midtown Inn');
-        //    });
+
+
+       
 
        return redirect()->back()->with('ok', 'You have already booked. Thank you for choosing us.');
 

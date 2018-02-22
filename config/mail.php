@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => 'cindy@bais.jjmor.tech',
-        'name' => 'Mai Mai',
+        'address' => 'aileen@baiscity-pension-houses.jjmor.tech',
+        'name' => 'Bais City Pension Houses',
     ],
 
     /*
@@ -84,7 +84,7 @@ return [
     |
     */
 
-    'username' => 'cindy@bais.jjmor.tech',
+    'username' => 'aileen@baiscity-pension-houses.jjmor.tech',
 
     'password' => 'masterpapaya21',
 

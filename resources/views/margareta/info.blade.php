@@ -118,9 +118,9 @@
                    
                     
 
-                    <li >
+                   <!--  <li >
                       <a href="{{route('margareta_payment_personnel')}}" ><i class="glyphicon glyphicon-usd"></i> Payment Personnel</a>
-                    </li>
+                    </li> -->
                     
                 </ul>
             </div>
@@ -140,6 +140,8 @@
                       <strong>Information!</strong>{{Session::get('yes')}}
                     </div>
                   @endif
+
+
               
               <div class="row">
                 <div class="col-md-6">
@@ -149,7 +151,7 @@
                       <li class="list-group-item">Room No#: {{$find->room_id}}</li>
                       <li class="list-group-item">Price: {{$find->room->category->price}}</li>
                       <li class="list-group-item">Number of Days: {{$days}}</li>
-                      <li class="list-group-item">Additional Occupants : {{$find->occupants - $find->room->category->person}} </li>
+                     
                     </ul>
 
                     
@@ -165,6 +167,10 @@
                       <li class="list-group-item">Check-in-time: {{$find->check_in_time}}</li>
                       <li class="list-group-item">Check-in-date: {{$find->check_in}}</li>
                       <li class="list-group-item">Check-out-date: {{$find->check_out}}</li>
+                      <li class="list-group-item">
+                        <a href="{{route('margareta_set_check_in', ['id'=> $find->id])}}" class="btn btn-primary btn-xs">Check-in</a>
+                        <a href="{{route('margareta_set_check_out', ['id'=> $find->id])}}" class="btn btn-danger btn-xs">Check-out</a>
+                      </li>
                     </ul>
                  </div>
 

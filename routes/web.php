@@ -445,6 +445,16 @@ Route::group(['prefix'=> 'margareta'], function(){
 			'uses'=> 'MargaretaController@margareta_info'
 		]);
 
+	Route::get('/set-check-in/{id}', [
+			'as'=> 'margareta_set_check_in',
+			'uses'=> 'MargaretaController@margareta_set_check_in'
+		]);
+
+		Route::get('/set-check-out/{id}', [
+			'as'=> 'margareta_set_check_out',
+			'uses'=> 'MargaretaController@margareta_set_check_out'
+		]);		
+
 
 });
 
@@ -512,6 +522,16 @@ Route::group(['prefix'=> 'velez'], function(){
 			'as'=> 'velez_info',
 			'uses'=> 'VelezController@velez_info'
 		]);
+
+	Route::get('/set-check-in/{id}', [
+			'as'=> 'velez_set_check_in',
+			'uses'=> 'VelezController@velez_set_check_in'
+		]);
+
+		Route::get('/set-check-out/{id}', [
+			'as'=> 'velez_set_check_out',
+			'uses'=> 'VelezController@velez_set_check_out'
+		]);			
 
 
 });

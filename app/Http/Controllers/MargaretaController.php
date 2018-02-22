@@ -176,4 +176,19 @@ class MargaretaController extends Controller
 
 
     }
+
+     public function margareta_set_check_in($id){
+        
+        $in = UserTransaction::where('id',$id)->update(['status_id'=> 2]);
+        if($in){
+            return redirect()->back()->with('yes', 'Customer has been successfully Check-In.');
+        }
+    }
+
+    public function margareta_set_check_out($id){
+        $in = UserTransaction::where('id',$id)->update(['status_id'=> 3]);
+        if($in){
+            return redirect()->back()->with('yes', 'Customer has been successfully Check-Out.');
+        }
+    }
 }
